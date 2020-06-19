@@ -34,7 +34,7 @@
             <div class="text-center">
               <p> Do You have Google Account?</p>
             </div>
-            <GoogleLogin :params="params" :onSuccess="onSignIn" :onFailure="onFailure">Login</GoogleLogin>
+            <GoogleLogin class="g-signin2" :params="params" :onSuccess="onSignIn" :onFailure="onFailure">Login</GoogleLogin>
             <!-- <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="width: auto;">Login With Google</div> -->
             <p class="mt-5 mb-3 text-muted">© amiruljbr 2020</p>
           </div>
@@ -139,11 +139,8 @@
 
 <script>
 import Axios from "axios";
-import AddTask from "./components/AddTask.vue"
-import Login from "./components/Login.vue"
-import Register from "./components/Register.vue"
-import TaskHolder from "./components/TaskHolder.vue"
-import GoogleLogin from "vue-google-login"
+import TaskHolder from "./components/TaskHolder.vue";
+import GoogleLogin from "vue-google-login";
 
 export default {
   data() {
@@ -214,9 +211,6 @@ export default {
     this.auth()
   },
   components: {
-    AddTask,
-    Login,
-    Register,
     TaskHolder,
     GoogleLogin
   },
