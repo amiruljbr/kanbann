@@ -258,8 +258,6 @@ export default {
     },
     submitLogin(){
       console.log("proses login")
-      console.log(this.loginEmail)
-      console.log(this.loginPassword)
       Axios({
         method: "post",
         url: 'http://localhost:3000/login',
