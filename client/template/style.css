@@ -1,0 +1,12 @@
+.list-task {
+  background-color: rgba(188, 203, 206, 0.63);
+  margin: 1em auto;
+}
+
+body {
+  background-color: rgb(37, 55, 56);
+}
+
+h1{
+  color: whitesmoke;
+}
