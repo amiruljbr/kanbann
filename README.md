@@ -1,5 +1,5 @@
 # Kanban
-`Kanban Project Week 1. Simple web application of manage Your Team. This app has :`
+`Kanban Project Week 2. Simple web application of manage Your Team. This app has :`
 > - Register
 > - Login
 > - Login with Google
