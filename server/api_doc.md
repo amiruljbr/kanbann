@@ -228,7 +228,7 @@ _Response (200)_
 
 ```
 ---
-## PUT /todos/:id
+## PUT /tasks/:id
 > To submit Form Edit Task
 _Request Header_
 ```
