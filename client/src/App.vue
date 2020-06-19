@@ -34,7 +34,7 @@
             <div class="text-center">
               <p> Do You have Google Account?</p>
             </div>
-            <GoogleLogin class="g-signin2" :params="params" :onSuccess="onSignIn" :onFailure="onFailure">Login</GoogleLogin>
+            <GoogleLogin class="g-signin2" :params="params" :onSuccess="onSignIn" :onFailure="onFailure">Login with Google</GoogleLogin>
             <!-- <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="width: auto;">Login With Google</div> -->
             <p class="mt-5 mb-3 text-muted">© amiruljbr 2020</p>
           </div>
@@ -238,7 +238,7 @@ export default {
       this.dataTasks = [];
       Axios({
         method: 'get',
-        url: 'http://localhost:3000/tasks',
+        url: 'https://baj-kanban.herokuapp.com/tasks',
         headers: {
           access_token: localStorage.access_token
         }
@@ -254,7 +254,7 @@ export default {
       console.log("proses login")
       Axios({
         method: "post",
-        url: 'http://localhost:3000/login',
+        url: 'https://baj-kanban.herokuapp.com/login',
         data: {
           email: this.loginEmail,
           password: this.loginPassword
@@ -281,7 +281,7 @@ export default {
       console.log("proses register")
       Axios({
         method: "post",
-        url: 'http://localhost:3000/register',
+        url: 'https://baj-kanban.herokuapp.com/register',
         data: {
           username: this.registerUsername,
           email: this.registerEmail,
@@ -308,7 +308,7 @@ export default {
       console.log(this.inputCategory)
       Axios({
         method: "post",
-        url: 'http://localhost:3000/tasks',
+        url: 'https://baj-kanban.herokuapp.com/tasks',
         data: {
           title: this.inputTitle,
           description: this.inputDescription,
@@ -337,7 +337,7 @@ export default {
       let {id_token} = googleUser.wc;
       Axios ({
         method: 'post',
-        url: `http://localhost:3000/google-sign-in`,
+        url: `https://baj-kanban.herokuapp.com/google-sign-in`,
         data: {
           id_token
         }
@@ -347,6 +347,7 @@ export default {
         localStorage.setItem('access_token',response.data.access_token)
         localStorage.setItem('currentUser',response.data.currentUser.username)
         localStorage.setItem('currentEmail',response.data.currentUser.email)
+        this.currentUser=response.data.currentUser.username;
         this.auth()
       })
       .catch( err => {

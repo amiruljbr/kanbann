@@ -159,7 +159,7 @@ export default {
     deleteTask(){
       Axios({
         method: 'delete',
-        url: 'http://localhost:3000/tasks/' + this.taskDetail.id,
+        url: 'https://baj-kanban.herokuapp.com/tasks/' + this.taskDetail.id,
         headers : {
           access_token:localStorage.access_token
         }
@@ -177,7 +177,7 @@ export default {
     editTask(){
       Axios({
         method: "put",
-        url: 'http://localhost:3000/tasks/' + this.taskDetail.id,
+        url: 'https://baj-kanban.herokuapp.com/tasks/' + this.taskDetail.id,
         data: {
           title: this.inputTitle1,
           description: this.inputDescription1,
