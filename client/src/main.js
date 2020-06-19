@@ -1,6 +1,12 @@
+import './firebase';
+
 import Vue from 'vue';
-import App from './App.vue';
+import VueFire from 'vuefire';
+import App from 'App.vue';
+
+Vue.use(VueFire);
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app');
+  el: '#app',
+  render: h => h(App)
+});
